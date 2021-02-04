@@ -1,3 +1,7 @@
+*{
+    border-radius: 10px;
+}
+
 .app_wrapper {
     display: grid;
     width: 1200px;
@@ -27,4 +31,13 @@
 .content {
     grid-area: c;
     background-color: darkcyan;
+}
+
+.content img{
+    width: 100%;
+    height: 45vh;
+}
+.nav div,
+.content div:not(:first-of-type){
+    margin: 5px 10px 6px;
 }
