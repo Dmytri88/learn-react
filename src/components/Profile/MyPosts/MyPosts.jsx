@@ -15,7 +15,9 @@ const MyPosts = () => {
             <div>
                 New post
             </div>
-            <Post />
+            <Post counter='15' massage='Hi, how are you?' />
+            <Post counter='16' massage="It's my first post!" />
+            <Post counter='99' massage="Prikol nahuj" />
         </div>
     );
 };

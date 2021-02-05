@@ -1,13 +1,14 @@
 import React from 'react';
 import style from './Post.module.css'
 
-const Post = () => {
+const Post = (props) => {
     return (
         <div className={style.item}>
             <img className={style.avatarka} src='http://archilab.online/images/1/123.jpg' />
-                Post 123
+            { props.massage }
             <div>
-                <span>like</span>
+                { props.counter }
+                <span> like</span>
             </div>
         </div>
     );
