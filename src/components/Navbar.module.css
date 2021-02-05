@@ -1,0 +1,20 @@
+.nav {
+    grid-area: n;
+    background-color: burlywood;
+}
+
+.nav {
+    box-shadow: 9px 9px 3px -8px rgba(49, 114, 165, 0.71);
+}
+
+.nav div {
+    margin: 5px 10px 6px;
+}
+
+.item{
+    color: #fff;
+}
+
+.active {
+    color: rebeccapurple;
+}
