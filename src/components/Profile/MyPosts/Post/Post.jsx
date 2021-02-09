@@ -7,8 +7,9 @@ const Post = (props) => {
             <img className={style.avatarka} src='http://archilab.online/images/1/123.jpg' />
             { props.massage }
             <div>
+               
+                <span> like </span>
                 { props.counter }
-                <span> like</span>
             </div>
         </div>
     );
