@@ -1,20 +1,19 @@
 .nav {
     grid-area: n;
     background-color: burlywood;
-}
-
-.nav {
-    box-shadow: 9px 9px 3px -8px rgba(49, 114, 165, 0.71);
+    padding: 20px;
 }
 
 .nav div {
     margin: 5px 10px 6px;
 }
 
-.item{
+.item a {
     color: #fff;
+    text-decoration: none;
 }
 
-.active {
+.item a.active_link {
     color: rebeccapurple;
+    font-weight: 700;
 }
