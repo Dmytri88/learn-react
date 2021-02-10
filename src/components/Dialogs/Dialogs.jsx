@@ -2,27 +2,37 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import style from './Dialogs.module.css'
 
+
+
+const DialogItem = (props) => {
+    let path = `/dialogs/id${props.id}`;
+
+    return (
+        <div className={style.dialog}>
+            <NavLink to={path} activeClassName={style.active}>{props.name}</NavLink>
+        </div>
+    )
+}
+
+const Message = (props) => {
+    return (
+        <div className={style.massage}>{props.text}</div>
+    )
+}
+
 const Dialogs = (props) => {
     return (
         <div className={style.dialogs}>
             <div className={style.dialogsItems}>
-                <div className={style.dialog}>
-                    <NavLink to="/dialogs/jen'ka">Женька</NavLink>
-                </div>
-                <div className={style.dialog}>
-                    <NavLink to="/dialogs/andrew">Андрей</NavLink>
-                </div>
-                <div className={` ${style.dialog} ${style.active} `}>
-                    <NavLink to="/dialogs/antosha">Антоша</NavLink>
-                </div>
-                <div className={style.dialog}>
-                    <NavLink to="/dialogs/serega">Серега</NavLink>
-                </div>
+                <DialogItem name='Женька' id='1' />
+                <DialogItem name='Андрей' id='2' />
+                <DialogItem name='Антоша' id='3' />
+                <DialogItem name='Серега' id='4' />
             </div>
             <div className={style.massages}>
-                <div className={style.massage}>Привет</div>
-                <div className={style.massage}>Как дела?</div>
-                <div className={style.massage}>Че далаешь?</div>
+                <Message text='Привет' />
+                <Message text='Как дела?' />
+                <Message text='Че делаешь?' />
             </div>
         </div>
     )
