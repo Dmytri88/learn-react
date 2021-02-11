@@ -1,24 +1,7 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import DialogItem from './DialogItems/DialogsItems';
 import style from './Dialogs.module.css'
-
-
-
-const DialogItem = (props) => {
-    let path = `/dialogs/id${props.id}`;
-
-    return (
-        <div className={style.dialog}>
-            <NavLink to={path} activeClassName={style.active}>{props.name}</NavLink>
-        </div>
-    )
-}
-
-const Message = (props) => {
-    return (
-        <div className={style.massage}>{props.text}</div>
-    )
-}
+import Message from './Messages/Messages';
 
 const Dialogs = (props) => {
 
@@ -29,24 +12,25 @@ const Dialogs = (props) => {
         { id: 4, name: 'Серега' }
     ];
 
-    let massagesData = [
-        { id: 1, text: 'Привет' },
-        { id: 2, text: 'Как дела?' },
-        { id: 3, text: 'Че делаешь?' }
+    let messagesData = [
+        { id: 1, _text: 'Привет' },
+        { id: 2, _text: 'Как дела?' },
+        { id: 3, _text: 'Че делаешь?' }
     ];
+
+    let dialogElement = dialogsData
+        .map(dialog => <DialogItem name={dialog.name} id={dialog.id} />)
+
+    let messagesElement = messagesData
+        .map(message => <Message text={message._text} />)
 
     return (
         <div className={style.dialogs}>
             <div className={style.dialogsItems}>
-                <DialogItem name={dialogsData[0].name} id={dialogsData[0].id} />
-                <DialogItem name={dialogsData[1].name} id={dialogsData[1].id} />
-                <DialogItem name={dialogsData[2].name} id={dialogsData[2].id} />
-                <DialogItem name={dialogsData[3].name} id={dialogsData[3].id} />
+                {dialogElement}
             </div>
-            <div className={style.massages}>
-                <Message text={massagesData[0].text} />
-                <Message text={massagesData[1].text} />
-                <Message text={massagesData[2].text} />
+            <div className={style.messages}>
+                {messagesElement}
             </div>
         </div>
     )

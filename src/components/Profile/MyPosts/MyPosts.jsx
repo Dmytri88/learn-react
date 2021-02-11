@@ -7,8 +7,12 @@ const MyPosts = () => {
     let postsData = [
         { id: 1, massage: 'Hi, how are you?', likesCount: 12 },
         { id: 2, massage: 'It my first post!', likesCount: 16 },
-        { id: 3, massage: 'Prikol nahuj', likesCount: 99 }
+        { id: 3, massage: 'Prikol nahuj', likesCount: 99 },
+        { id: 4, massage: 'Bla-bla', likesCount: 0 }
     ];
+
+    let anyPosts = postsData
+        .map(elements => <Post likesCount={elements.likesCount} massage={elements.massage} />)
 
     return (
         <div className={style.post_block}>
@@ -27,9 +31,7 @@ const MyPosts = () => {
                 New post
             </div>
             <div className={style.posts}>
-                <Post likesCount={postsData[0].likesCount} massage={postsData[0].massage} />
-                <Post likesCount={postsData[1].likesCount} massage={postsData[1].massage} />
-                <Post likesCount={postsData[2].likesCount} massage={postsData[2].massage} />
+                {anyPosts}
             </div>
         </div>
     );
