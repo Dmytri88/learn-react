@@ -15,7 +15,7 @@ const Dialogs = (props) => {
     let messagesData = [
         { id: 1, _text: 'Привет' },
         { id: 2, _text: 'Как дела?' },
-        { id: 3, _text: 'Че делаешь?' }
+        { id: 3, _text: 'Чё делаешь?' }
     ];
 
     let dialogElement = dialogsData
