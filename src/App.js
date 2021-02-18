@@ -10,7 +10,7 @@ import Profile from './components/Profile/Profile';
 import Settings from './components/Settings/Settings';
 
 
-const App = () => {
+const App = (props) => {
   return (
     <BrowserRouter>
       <div className='app_wrapper'>
@@ -23,8 +23,8 @@ const App = () => {
           <Route path='/music' component={Music} />
           <Route path='/settings' component={Settings} /> */}
 
-          <Route path='/profile' render={() => <Profile />} />
-          <Route path='/dialogs' render={() => <Dialogs />} />
+          <Route path='/profile' render={() => <Profile postsData={props.postsData} />} />
+          <Route path='/dialogs' render={() => <Dialogs dialogsData={props.dialogsData} messagesData={props.messagesData}/>} />
           <Route path='/news' render={() => <News />} />
           <Route path='/music' render={() => <Music />} />
           <Route path='/settings' render={() => <Settings />} />
